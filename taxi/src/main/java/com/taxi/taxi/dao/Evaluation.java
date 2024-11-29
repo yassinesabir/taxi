@@ -1,5 +1,6 @@
 package com.taxi.taxi.dao;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDateTime;
@@ -15,9 +16,11 @@ public class Evaluation {
     private Voyage voyage;
 
     @ManyToOne
+    @JsonBackReference
     private Passager passager;
 
     @ManyToOne
+    @JsonBackReference
     private Chauffeur chauffeur;
 
     private int note;

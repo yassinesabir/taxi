@@ -1,5 +1,6 @@
 package com.taxi.taxi.dao;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.taxi.taxi.enumerations.PassagerMessage;
 import jakarta.persistence.*;
 import java.util.List;
@@ -15,5 +16,6 @@ public class NotificationPassager extends Notification {
             joinColumns = @JoinColumn(name = "notification_id"),
             inverseJoinColumns = @JoinColumn(name = "passager_id")
     )
+    @JsonManagedReference
     private List<Passager> passagers;
 }

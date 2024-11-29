@@ -1,5 +1,6 @@
 package com.taxi.taxi.dao;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.taxi.taxi.enumerations.StatutVoyage;
 import jakarta.persistence.*;
 import lombok.*;
@@ -23,13 +24,16 @@ public class Voyage {
     private List<Passager> passagers;
 
     @ManyToOne
+    @JsonBackReference
     private Taxi taxi; // Taxi actuellement utilisé pour ce voyage
 
     @ManyToOne
+    @JsonBackReference
     private Chauffeur chauffeur; // Chauffeur actuellement conduisant ce taxi
 
     @ManyToOne
-    private Administrateur admin; // Chauffeur actuellement conduisant ce taxi
+    @JsonBackReference
+    private Courtier courtier; // Chauffeur actuellement conduisant ce taxi
 
     private LocalDateTime heureDepart;
 
@@ -43,4 +47,6 @@ public class Voyage {
 
     @OneToMany(mappedBy = "voyage", cascade = CascadeType.ALL)
     private List<Evaluation> evaluations;
+
+    private int nombrePassagers=0;
 }

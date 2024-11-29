@@ -1,5 +1,6 @@
 package com.taxi.taxi.dao;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.taxi.taxi.enumerations.MethodePaiement;
 import com.taxi.taxi.enumerations.StatutPaiement;
 import jakarta.persistence.*;
@@ -14,6 +15,7 @@ public class Transaction {
     private Long id;
 
     @ManyToOne
+    @JsonBackReference
     private Voyage voyage;
 
     @Enumerated(EnumType.STRING)

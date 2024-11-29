@@ -1,5 +1,5 @@
 package com.taxi.taxi.enumerations;
 
 public enum StatutPaiement {
-    EN_ATTENTE, COMPLETE, ECHOUE, REMBOURSE
+    EN_ATTENTE, VALIDE, ECHOUE, REMBOURSE
 }

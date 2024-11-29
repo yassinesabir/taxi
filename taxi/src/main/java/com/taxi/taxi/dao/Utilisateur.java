@@ -3,14 +3,11 @@ package com.taxi.taxi.dao;
 
 import com.taxi.taxi.enumerations.RoleUtilisateur;
 import com.taxi.taxi.enumerations.StatutCompte;
-import com.taxi.taxi.enumerations.StatutTaxi;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.*;
 import lombok.Data;
 import lombok.NonNull;
 
-import java.util.List;
 
 
 @Entity

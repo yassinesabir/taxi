@@ -1,5 +1,6 @@
 package com.taxi.taxi.dao;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -12,6 +13,7 @@ public class Passager extends Utilisateur{
     private int numeroCompte;
 
     @ManyToMany(mappedBy = "passagers")
+    @JsonManagedReference
     private List<Voyage> voyages;
 
     @ManyToMany(mappedBy = "passagers")
